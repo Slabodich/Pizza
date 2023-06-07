@@ -1,0 +1,36 @@
+@import '../../styles/app.scss';
+
+.categories {
+  padding: 20px 10px;
+  box-sizing: border-box;
+  .conteiner {
+    display: flex;
+
+    width: calc(355px - 20px);
+    overflow: scroll;
+
+    .categorie {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 30px;
+      font-weight: bold;
+      background-color: #f9f9f9;
+      // cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      @include noselect();
+
+      // &:hover {
+      //   background-color: darken(#f9f9f9, 2%);
+      // }
+
+      &:active {
+        background-color: darken(#f9f9f9, 5%);
+      }
+
+      &.active {
+        background-color: #282828;
+        color: #fff;
+      }
+    }
+  }
+}
