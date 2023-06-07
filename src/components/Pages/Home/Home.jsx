@@ -3,6 +3,7 @@ import Categories from '../../Categories/Categories';
 import Sort from '../../Sort/Sort';
 import PizzaCard from '../../PizzaCard/PizzaCard';
 import styles from './Home.module.scss';
+import pizzas from '../../../accets/pizzas.json';
 
 function Home() {
   return (
@@ -13,7 +14,9 @@ function Home() {
 
         <h2 className={styles.title}>Все пиццы</h2>
         <div className={styles.items}>
-          <PizzaCard />
+          {pizzas.map((obj) => (
+            <PizzaCard {...obj} />
+          ))}
         </div>
       </div>
     </div>

@@ -1,26 +1,21 @@
-@import 'variables';
+@import '../../styles/app.scss';
 
-.pizza-block {
+.pizzaBlock {
   width: 280px;
   text-align: center;
-  margin-bottom: 65px;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
-  }
-
-  &__image {
+  .image {
     width: 260px;
   }
 
-  &__title {
+  .title {
     font-size: 20px;
     font-weight: 900;
     letter-spacing: 1%;
     margin-bottom: 20px;
   }
 
-  &__selector {
+  .PizzaSelector {
     display: flex;
     background-color: #f3f3f3;
     border-radius: 10px;
@@ -52,17 +47,30 @@
     }
   }
 
-  &__bottom {
+  .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
   }
 
-  &__price {
+  .price {
     font-weight: bold;
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+  }
+  .buttonAdd {
+    padding: 11px 18px 14px;
+    background-color: $orange;
+    border-radius: 30px;
+    img {
+      padding-right: 5px;
+    }
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+    }
   }
 }

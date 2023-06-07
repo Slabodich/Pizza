@@ -1,13 +1,14 @@
 @import '../../styles/app.scss';
 
 .categories {
-  padding: 20px 10px;
+  padding: 20px 0;
   box-sizing: border-box;
   .conteiner {
     display: flex;
 
     width: calc(355px - 20px);
     overflow: scroll;
+    outline: none;
 
     .categorie {
       padding: 10px 20px;
