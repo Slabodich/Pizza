@@ -1,19 +1,16 @@
-.wrapper {
-  padding: 13px 10px 30px;
-  .title {
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  .categories {
-    padding: 20px 0;
-  }
-  .sort {
-    padding-bottom: 20px;
-  }
-  .items {
-    display: grid;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-  }
+.title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.categories {
+  padding: 20px 0;
+}
+.sort {
+  padding-bottom: 20px;
+}
+.items {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }

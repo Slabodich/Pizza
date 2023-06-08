@@ -21,22 +21,20 @@ function Home() {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>
-        <div className={styles.categories}>
-          <Categories />
-        </div>
-        <div className={styles.sort}>
-          <Sort />
-        </div>
-        <h2 className={styles.title}>Все пиццы</h2>
-        <div className={styles.items}>
-          {isLoading
-            ? [...new Array(6)].map((_, i) => <Sceleton key={i} />)
-            : items.map((item) => <PizzaCard key={item.id} {...item} />)}
-        </div>
+    <>
+      <div className={styles.categories}>
+        <Categories />
       </div>
-    </div>
+      <div className={styles.sort}>
+        <Sort />
+      </div>
+      <h2 className={styles.title}>Все пиццы</h2>
+      <div className={styles.items}>
+        {isLoading
+          ? [...new Array(6)].map((_, i) => <Sceleton key={i} />)
+          : items.map((item) => <PizzaCard key={item.id} {...item} />)}
+      </div>
+    </>
   );
 }
 

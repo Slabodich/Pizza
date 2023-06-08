@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './Header.module.scss';
+
 import logo from '../../accets/img/logo.png';
 import cart from '../../accets/img/cart.svg';
 
@@ -8,7 +11,9 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div className={styles.cart}>
           <a href="/cart.html" className={styles.buttonCart}>
