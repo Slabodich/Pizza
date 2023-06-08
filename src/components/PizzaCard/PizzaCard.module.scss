@@ -61,13 +61,25 @@
     letter-spacing: 0.015em;
   }
   .buttonAdd {
-    padding: 11px 18px 14px;
+    padding: 11px 15px 14px;
     background-color: $orange;
     border-radius: 30px;
+    i {
+      padding: 2px 5px;
+      width: 10px;
+      height: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 12px;
+      color: $orange;
+      background-color: white;
+      border-radius: 30px;
+    }
     img {
       padding-right: 5px;
     }
     span {
+      margin-right: 5px;
       font-size: 16px;
       font-weight: 700;
       color: white;

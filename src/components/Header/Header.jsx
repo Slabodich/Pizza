@@ -8,7 +8,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
         <div className={styles.cart}>
           <a href="/cart.html" className={styles.buttonCart}>
