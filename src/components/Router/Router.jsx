@@ -5,6 +5,7 @@ import styles from './Router.module.scss';
 
 import Header from '../Header/Header';
 import Home from '../Pages/Home/Home';
+import Cart from '../Pages/Cart/Cart';
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
         <div className={styles.main}>
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Cart />} path="/cart" />
             <Route element={<div>Страница не найдена</div>} path="*" />
           </Routes>
         </div>

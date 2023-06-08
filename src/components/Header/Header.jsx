@@ -16,11 +16,11 @@ function Header() {
           </Link>
         </div>
         <div className={styles.cart}>
-          <a href="/cart.html" className={styles.buttonCart}>
+          <Link to="/cart" className={styles.buttonCart}>
             <span className={styles.price}>520 ₽</span>
             <img className={styles.cartIcon} src={cart} alt="cart" />
             <span>3</span>
-          </a>
+          </Link>
         </div>
       </div>
     </header>
