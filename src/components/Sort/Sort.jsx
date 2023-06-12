@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import styles from './Sort.module.scss';
 import cnBind from 'classnames/bind';
 
-function Sort() {
+function Sort({ activeSort, setActiveSotr }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSort, setActiveSotr] = useState(0);
 
   const cx = cnBind.bind(styles);
 
-  const items = ['популярности', 'цене', 'алфавиту'];
-  const selectedItem = items[activeSort];
+  const items = [
+    { name: 'популярности (DESC)', sortProperty: 'rating' },
+    { name: 'популярности (ASC)', sortProperty: '-rating' },
+    { name: 'цене (DESC)', sortProperty: 'price' },
+    { name: 'цене (ASC)', sortProperty: '-price' },
+    { name: 'алфавиту (DESC)', sortProperty: 'title' },
+    { name: 'алфавиту (ASC)', sortProperty: '-title' },
+  ];
   const selectItem = (item) => {
     setActiveSotr(item);
     setIsOpen(!isOpen);
@@ -30,17 +35,19 @@ function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>{selectedItem}</span>
+        <span onClick={() => setIsOpen(!isOpen)}>{activeSort}</span>
       </div>
       {isOpen && (
         <div className={styles.popup}>
           <ul>
             {items.map((item, i) => (
               <li
-                onClick={() => selectItem(i)}
-                className={cx({ active: i === activeSort })}
+                onClick={() => selectItem(item)}
+                className={cx({
+                  active: item.sortProperty === activeSort.sortProperty,
+                })}
               >
-                {item}
+                {item.name}
               </li>
             ))}
           </ul>

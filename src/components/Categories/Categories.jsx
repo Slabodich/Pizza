@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Categories.module.scss';
 import cnBind from 'classnames/bind';
 
-function Categories() {
-  const [activeCategorie, setActiveCategorie] = useState(1);
-
+function Categories({ activeCategorie, setActiveCategorie }) {
   const categories = [
     {
-      _id: 1,
+      _id: 0,
       name: 'Все',
     },
     {
-      _id: 2,
+      _id: 1,
       name: 'Мясные',
     },
     {
-      _id: 3,
+      _id: 2,
       name: 'Вегетарианская',
     },
     {
-      _id: 4,
+      _id: 3,
       name: 'Гриль',
     },
     {
-      _id: 5,
+      _id: 4,
       name: 'Острые',
     },
     {
-      _id: 6,
+      _id: 5,
       name: 'Закрытые',
     },
   ];
