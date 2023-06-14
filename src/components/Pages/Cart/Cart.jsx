@@ -1,15 +1,25 @@
 import React from 'react';
-import styles from './Cart.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { ReactComponent as Plus } from '../../../accets/img/plus.svg';
-import { ReactComponent as Minus } from '../../../accets/img/minus.svg';
-import { ReactComponent as Remove } from '../../../accets/img/remove.svg';
+import styles from './Cart.module.scss';
+import { clearItems } from '../../Redux/slices/cartSlice';
 import { ReactComponent as CartIcon } from '../../../accets/img/cart.svg';
 import { ReactComponent as ClearIcon } from '../../../accets/img/clear.svg';
 import { ReactComponent as BackIcon } from '../../../accets/img/back.svg';
 import { Link } from 'react-router-dom';
+import CartItem from '../../CartItem/CartItem';
+import CartEmpty from '../../CartEmpty/CartEmpty';
 
 function Cart() {
+  const dispatch = useDispatch();
+  const { items, totalPrice } = useSelector((state) => state.cart);
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const onClickClear = () => {
+    dispatch(clearItems());
+  };
+  if (!totalPrice) {
+    return <CartEmpty />;
+  }
   return (
     <>
       <div className={styles.container}>
@@ -19,84 +29,23 @@ function Cart() {
               <CartIcon />
               Корзина
             </h2>
-            <div className={styles.clear}>
+            <div onClick={onClickClear} className={styles.clear}>
               <ClearIcon />
               <span>Очистить корзину</span>
             </div>
           </div>
           <div className={styles.items}>
-            <div className={styles.item}>
-              <div className={styles.wrapImg}>
-                <img
-                  className={styles.image}
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-                  alt="Pizza"
-                />
-              </div>
-              <div className={styles.info}>
-                <h3>Сырный цыпленок</h3>
-                <p>тонкое тесто, 26 см.</p>
-              </div>
-              <div className={styles.wrapCount}>
-                <div className={styles.count}>
-                  <div className={styles.minus}>
-                    <Minus />
-                  </div>
-                  <b>2</b>
-                  <div className={styles.plus}>
-                    <Plus />
-                  </div>
-                </div>
-                <div className={styles.price}>
-                  <b>770 ₽</b>
-                </div>
-              </div>
-              <div className={styles.remove}>
-                <div className={styles.btnRemove}>
-                  <Remove />
-                </div>
-              </div>
-            </div>
-            <div className={styles.item}>
-              <div className={styles.wrapImg}>
-                <img
-                  className={styles.image}
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-                  alt="Pizza"
-                />
-              </div>
-              <div className={styles.info}>
-                <h3>Сырный цыпленок</h3>
-                <p>тонкое тесто, 26 см.</p>
-              </div>
-              <div className={styles.wrapCount}>
-                <div className={styles.count}>
-                  <div className={styles.minus}>
-                    <Minus />
-                  </div>
-                  <b>2</b>
-                  <div className={styles.plus}>
-                    <Plus />
-                  </div>
-                </div>
-                <div className={styles.price}>
-                  <b>770 ₽</b>
-                </div>
-              </div>
-              <div className={styles.remove}>
-                <div className={styles.btnRemove}>
-                  <Remove />
-                </div>
-              </div>
-            </div>
+            {items.map((item) => (
+              <CartItem key={item.id} {...item} />
+            ))}
           </div>
           <div className={styles.bottom}>
             <div className={styles.details}>
               <span>
-                Всего пицц: <b>3 шт.</b>{' '}
+                Всего пицц: <b>{totalCount} шт.</b>{' '}
               </span>
               <span>
-                Сумма заказа: <b>900 ₽</b>{' '}
+                Сумма заказа: <b>{totalPrice} ₽</b>{' '}
               </span>
             </div>
             <div className={styles.buttons}>
@@ -114,7 +63,5 @@ function Cart() {
     </>
   );
 }
-
-Cart.propTypes = {};
 
 export default Cart;

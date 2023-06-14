@@ -5,8 +5,10 @@ import styles from './Header.module.scss';
 
 import logo from '../../accets/img/logo.png';
 import cart from '../../accets/img/cart.svg';
+import { useSelector } from 'react-redux';
 
 function Header() {
+  const { totalPrice, items } = useSelector((state) => state.cart);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -17,9 +19,9 @@ function Header() {
         </div>
         <div className={styles.cart}>
           <Link to="/cart" className={styles.buttonCart}>
-            <span className={styles.price}>520 ₽</span>
+            <span className={styles.price}>{totalPrice} ₽</span>
             <img className={styles.cartIcon} src={cart} alt="cart" />
-            <span>3</span>
+            <span>{items.length}</span>
           </Link>
         </div>
       </div>

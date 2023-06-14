@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './Sort.module.scss';
 import cnBind from 'classnames/bind';
 
 function Sort({ activeSort, setActiveSotr }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const sortRef = useRef();
 
   const cx = cnBind.bind(styles);
 
@@ -19,8 +21,21 @@ function Sort({ activeSort, setActiveSotr }) {
     setActiveSotr(item);
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.composedPath().includes(sortRef.current)) {
+        setIsOpen(false);
+      }
+    };
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', handleClickOutside);
+    };
+  });
+
   return (
-    <div className={styles.sort}>
+    <div ref={sortRef} className={styles.sort}>
       <div className={styles.label}>
         <svg
           width="10"
@@ -42,6 +57,7 @@ function Sort({ activeSort, setActiveSotr }) {
           <ul>
             {items.map((item, i) => (
               <li
+                key={i}
                 onClick={() => selectItem(item)}
                 className={cx({
                   active: item.sortProperty === activeSort.sortProperty,
