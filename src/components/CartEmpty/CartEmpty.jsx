@@ -1,6 +1,8 @@
 import React from 'react';
+import EmptyCartImg from '../../accets/img/emptyCart.svg';
 
 import styles from './CartEmpty.module.scss';
+import { Link } from 'react-router-dom';
 
 function CartEmpty() {
   return (
@@ -8,15 +10,10 @@ function CartEmpty() {
       <h2>
         Корзина пустая <icon>😕</icon>
       </h2>
-      <p>
-        Вероятней всего, вы не заказывали ещё пиццу.
-        <br />
-        Для того, чтобы заказать пиццу, перейди на главную страницу.
-      </p>
-      <img src="/img/empty-cart.png" alt="Empty cart" />
-      <a href="/" className={styles.button}>
+      <img src={EmptyCartImg} alt="Empty cart" />
+      <Link to="/" className={styles.button}>
         <span>Вернуться назад</span>
-      </a>
+      </Link>
     </div>
   );
 }
