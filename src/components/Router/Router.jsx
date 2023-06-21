@@ -14,7 +14,7 @@ function Router() {
         <Header />
         <div className={styles.main}>
           <Routes>
-            <Route element={<Home />} path="/" />
+            <Route element={<Home />} path="/Pizza" />
             <Route element={<Cart />} path="/cart" />
             <Route element={<div>Страница не найдена</div>} path="*" />
           </Routes>
