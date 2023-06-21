@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -38,9 +38,11 @@ function Home() {
 
   const sceleton = [...new Array(6)].map((_, i) => <Sceleton key={i} />);
   const pizzas = items.map((item) => <PizzaCard key={item.id} {...item} />);
+
   return (
     <>
-      <div className={styles.categories}>
+    <div className={styles.filtersWrapper}>
+    <div className={styles.categories}>
         <Categories
           activeCategorie={activeCategorie}
           setActiveCategorie={handleSetActiveCategorie}
@@ -49,6 +51,8 @@ function Home() {
       <div className={styles.sort}>
         <Sort activeSort={sort.name} setActiveSotr={handleSetSort} />
       </div>
+    </div>
+      
       <h2 className={styles.title}>Все пиццы</h2>
       <div className={styles.items}>
         {status === 'error' ? (

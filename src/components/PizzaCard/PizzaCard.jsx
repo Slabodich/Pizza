@@ -4,7 +4,7 @@ import cn from 'classnames/bind';
 
 import { addItem } from '../Redux/slices/cartSlice';
 import styles from './PizzaCard.module.scss';
-import addIcon from '../../accets/img/addIcon.svg';
+import AddIcon from '../../accets/img/addIcon.svg';
 
 const cx = cn.bind(styles);
 
@@ -62,7 +62,7 @@ function PizzaCard({ id, imageUrl, title, types, sizes, price }) {
       <div className={styles.bottom}>
         <div className={styles.price}>от {price} ₽</div>
         <button onClick={onClickAdd} type="button" className={styles.buttonAdd}>
-          <img src={addIcon} alt="add" />
+          <img src={AddIcon} alt="add" />
           <span>Добавить</span>
           {addedCount > 0 && <i>{addedCount}</i>}
         </button>

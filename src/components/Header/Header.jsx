@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-import logo from '../../accets/img/logo.png';
-import cart from '../../accets/img/cart.svg';
+import Logo from '../../accets/img/logo.png';
+import Cart from '../../accets/img/cart.svg';
 import { useSelector } from 'react-redux';
 
 function Header() {
@@ -14,13 +14,13 @@ function Header() {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={Logo} alt="logo" />
           </Link>
         </div>
         <div className={styles.cart}>
           <Link to="/cart" className={styles.buttonCart}>
             <span className={styles.price}>{totalPrice} ₽</span>
-            <img className={styles.cartIcon} src={cart} alt="cart" />
+            <img className={styles.cartIcon} src={Cart} alt="cart" />
             <span>{items.length}</span>
           </Link>
         </div>

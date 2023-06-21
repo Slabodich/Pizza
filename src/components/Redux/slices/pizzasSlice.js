@@ -18,7 +18,7 @@ export const fetchPizzas = createAsyncThunk(
 
 const initialState = {
   items: [],
-  status: '',
+  status: 'loading',
 };
 
 const pizzasSlice = createSlice({

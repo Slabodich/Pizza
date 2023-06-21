@@ -22,6 +22,10 @@ function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
     }
   }, [count, dispatch, id]);
 
+  const onClickRemoveItem = useCallback(() => {
+    dispatch(removeItem(id));
+  }, [dispatch, id]);
+
   return (
     <div className={styles.item}>
       <div className={styles.wrapImg}>
@@ -48,9 +52,9 @@ function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
         </div>
       </div>
       <div className={styles.remove}>
-        <div className={styles.btnRemove}>
+        <button onClick={onClickRemoveItem} className={styles.btnRemove}>
           <RemoveIcon />
-        </div>
+        </button>
       </div>
     </div>
   );

@@ -20,6 +20,12 @@
     padding: 10px 0;
     width: 130px;
     box-sizing: border-box;
+    @media screen and (min-width: 1280px) {
+      &:hover {
+        background-color: darken($orange, 8%);
+        transition: all $duration ease-in-out;
+      }
+    }
 
     border-radius: 30px;
     background-color: $orange;

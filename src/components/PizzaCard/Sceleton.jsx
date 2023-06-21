@@ -10,6 +10,7 @@ const Sceleton = (props) => (
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     {...props}
+    style={{ justifySelf: 'center' }}
   >
     <rect x="30" y="280" rx="0" ry="0" width="197" height="15" />
     <rect x="0" y="438" rx="0" ry="0" width="81" height="15" />

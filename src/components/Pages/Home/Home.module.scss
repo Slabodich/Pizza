@@ -2,8 +2,20 @@
   font-weight: 700;
   margin-bottom: 20px;
 }
+.filtersWrapper {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .categories {
   padding: 20px 0;
+  @media screen and (min-width: 1280px) {
+    flex: 1;
+  }
 }
 .sort {
   padding-bottom: 20px;
@@ -13,4 +25,13 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 30px;
+  }
 }

@@ -10,12 +10,10 @@ function Sort({ activeSort, setActiveSotr }) {
   const cx = cnBind.bind(styles);
 
   const items = [
-    { name: 'популярности (DESC)', sortProperty: 'rating' },
-    { name: 'популярности (ASC)', sortProperty: '-rating' },
-    { name: 'цене (DESC)', sortProperty: 'price' },
-    { name: 'цене (ASC)', sortProperty: '-price' },
-    { name: 'алфавиту (DESC)', sortProperty: 'title' },
-    { name: 'алфавиту (ASC)', sortProperty: '-title' },
+    { name: 'популярности', sortProperty: 'rating' },
+    { name: 'цене (по убыванию)', sortProperty: 'price' },
+    { name: 'цене (по возрастанию)', sortProperty: '-price' },
+    { name: 'алфавиту', sortProperty: '-title' },
   ];
   const selectItem = (item) => {
     setActiveSotr(item);
