@@ -49,7 +49,7 @@ function Cart() {
               </span>
             </div>
             <div className={styles.buttons}>
-              <Link to="/" className={styles.goBackBtn}>
+              <Link to="/Pizza" className={styles.goBackBtn}>
                 <BackIcon />
                 <span>Вернуться назад</span>
               </Link>

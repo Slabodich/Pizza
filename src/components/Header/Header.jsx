@@ -13,7 +13,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link to="/">
+          <Link to="/Pizza">
             <img src={Logo} alt="logo" />
           </Link>
         </div>

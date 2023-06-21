@@ -11,7 +11,7 @@ function CartEmpty() {
         Корзина пустая <icon>😕</icon>
       </h2>
       <img src={EmptyCartImg} alt="Empty cart" />
-      <Link to="/" className={styles.button}>
+      <Link to="/Pizza" className={styles.button}>
         <span>Вернуться назад</span>
       </Link>
     </div>
