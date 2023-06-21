@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addItem, minusCount, removeItem } from '../Redux/slices/cartSlice';
@@ -10,17 +10,17 @@ import { ReactComponent as RemoveIcon } from '../../accets/img/remove.svg';
 function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
   const dispatch = useDispatch();
 
-  const onClickPlus = () => {
+  const onClickPlus = useCallback(() => {
     dispatch(addItem({ id }));
-  };
-  const onClickMinus = () => {
+  }, [dispatch, id]);
+
+  const onClickMinus = useCallback(() => {
     if (count < 2) {
       dispatch(removeItem(id));
     } else {
       dispatch(minusCount({ id }));
     }
-  };
-  console.log(count);
+  }, [count, dispatch, id]);
 
   return (
     <div className={styles.item}>
