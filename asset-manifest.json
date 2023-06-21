@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/pizza/static/css/main.25726e72.css",
-    "main.js": "/pizza/static/js/main.28399567.js",
-    "static/media/emptyCart.svg": "/pizza/static/media/emptyCart.903eff3144cd70abf2614eec897d6974.svg",
-    "static/media/cart.svg": "/pizza/static/media/cart.d05720f2b474db2145233cd2ce1d4e91.svg",
-    "static/media/clear.svg": "/pizza/static/media/clear.ceafcffb34cece0b1462c3505b170d88.svg",
-    "static/media/remove.svg": "/pizza/static/media/remove.2d1f53ca5f3e1ba35446c3613993903b.svg",
-    "index.html": "/pizza/index.html",
-    "static/media/plus.svg": "/pizza/static/media/plus.deedb499d2be6beb9d7fb585e3fc39eb.svg",
-    "static/media/minus.svg": "/pizza/static/media/minus.6c093cd41848df4aa3475a7610eb6605.svg",
-    "static/media/addIcon.svg": "/pizza/static/media/addIcon.fd8c3c804f350e4704863a19a15fb36c.svg",
-    "static/media/back.svg": "/pizza/static/media/back.fc29ec73901b6f8218c91a0d69592416.svg",
-    "main.25726e72.css.map": "/pizza/static/css/main.25726e72.css.map",
-    "main.28399567.js.map": "/pizza/static/js/main.28399567.js.map"
+    "main.css": "/Pizza/static/css/main.25726e72.css",
+    "main.js": "/Pizza/static/js/main.9d56e69c.js",
+    "static/media/emptyCart.svg": "/Pizza/static/media/emptyCart.903eff3144cd70abf2614eec897d6974.svg",
+    "static/media/cart.svg": "/Pizza/static/media/cart.d05720f2b474db2145233cd2ce1d4e91.svg",
+    "static/media/clear.svg": "/Pizza/static/media/clear.ceafcffb34cece0b1462c3505b170d88.svg",
+    "static/media/remove.svg": "/Pizza/static/media/remove.2d1f53ca5f3e1ba35446c3613993903b.svg",
+    "index.html": "/Pizza/index.html",
+    "static/media/plus.svg": "/Pizza/static/media/plus.deedb499d2be6beb9d7fb585e3fc39eb.svg",
+    "static/media/minus.svg": "/Pizza/static/media/minus.6c093cd41848df4aa3475a7610eb6605.svg",
+    "static/media/addIcon.svg": "/Pizza/static/media/addIcon.fd8c3c804f350e4704863a19a15fb36c.svg",
+    "static/media/back.svg": "/Pizza/static/media/back.fc29ec73901b6f8218c91a0d69592416.svg",
+    "main.25726e72.css.map": "/Pizza/static/css/main.25726e72.css.map",
+    "main.9d56e69c.js.map": "/Pizza/static/js/main.9d56e69c.js.map"
   },
   "entrypoints": [
     "static/css/main.25726e72.css",
-    "static/js/main.28399567.js"
+    "static/js/main.9d56e69c.js"
   ]
 }
