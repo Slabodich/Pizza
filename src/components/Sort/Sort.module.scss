@@ -17,6 +17,12 @@
     span {
       color: $orange;
       border-bottom: 1px dashed $orange;
+      @media screen and (min-width: 1280px) {
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid $orange;
+        }
+      }
     }
   }
 
@@ -41,6 +47,11 @@
           background: rgba(254, 95, 30, 0.05);
           font-weight: bold;
           color: $orange;
+        }
+        @media screen and (min-width: 1280px) {
+          &:hover {
+            background: rgba(254, 95, 30, 0.05);
+          }
         }
       }
     }
