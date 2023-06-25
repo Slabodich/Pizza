@@ -9,10 +9,11 @@ import { ReactComponent as BackIcon } from '../../../accets/img/back.svg';
 import { Link } from 'react-router-dom';
 import CartItem from '../../CartItem/CartItem';
 import CartEmpty from '../../CartEmpty/CartEmpty';
+import { RootState } from '../../Redux/store';
 
-function Cart() {
+const Cart: React.FC = () => {
   const dispatch = useDispatch();
-  const { items, totalPrice } = useSelector((state) => state.cart);
+  const { items, totalPrice } = useSelector((state: RootState) => state.cart);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
   const onClickClear = () => {
     dispatch(clearItems());
@@ -62,6 +63,6 @@ function Cart() {
       </div>
     </>
   );
-}
+};
 
 export default Cart;

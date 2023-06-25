@@ -1,24 +1,47 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addItem, minusCount, removeItem } from '../Redux/slices/cartSlice';
+import {
+  addItem,
+  minusCount,
+  removeItem,
+  CartItem as CartItemType,
+} from '../Redux/slices/cartSlice';
 import styles from './CartItem.module.scss';
 import { ReactComponent as PlusIcon } from '../../accets/img/plus.svg';
 import { ReactComponent as MinusIcon } from '../../accets/img/minus.svg';
 import { ReactComponent as RemoveIcon } from '../../accets/img/remove.svg';
 
-function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
+interface CartItemProps {
+  id: string;
+  title: string;
+  imageUrl: string;
+  price: number;
+  count: number;
+  size: number;
+  type: string;
+}
+
+const CartItem: React.FC<CartItemProps> = ({
+  id,
+  title,
+  imageUrl,
+  price,
+  count,
+  size,
+  type,
+}) => {
   const dispatch = useDispatch();
 
   const onClickPlus = useCallback(() => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id } as CartItemType));
   }, [dispatch, id]);
 
   const onClickMinus = useCallback(() => {
     if (count < 2) {
       dispatch(removeItem(id));
     } else {
-      dispatch(minusCount({ id }));
+      dispatch(minusCount({ id } as CartItemType));
     }
   }, [count, dispatch, id]);
 
@@ -34,7 +57,7 @@ function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
       <div className={styles.info}>
         <h3>{title}</h3>
         <p>
-          {type}, {sizes} см.
+          {type}, {size} см.
         </p>
       </div>
       <div className={styles.wrapCount}>
@@ -58,6 +81,6 @@ function CartItem({ id, title, imageUrl, price, count, sizes, type }) {
       </div>
     </div>
   );
-}
+};
 
 export default CartItem;

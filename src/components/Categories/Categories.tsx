@@ -2,7 +2,15 @@ import React from 'react';
 import styles from './Categories.module.scss';
 import cnBind from 'classnames/bind';
 
-function Categories({ activeCategorie, setActiveCategorie }) {
+type CategoriesProps = {
+  activeCategorie: number;
+  setActiveCategorie: (i: number) => void;
+};
+
+const Categories: React.FC<CategoriesProps> = ({
+  activeCategorie,
+  setActiveCategorie,
+}) => {
   const categories = [
     {
       _id: 0,
@@ -48,6 +56,6 @@ function Categories({ activeCategorie, setActiveCategorie }) {
       </ul>
     </nav>
   );
-}
+};
 
 export default Categories;

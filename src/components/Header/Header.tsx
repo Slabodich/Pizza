@@ -6,9 +6,10 @@ import styles from './Header.module.scss';
 import Logo from '../../accets/img/logo.png';
 import Cart from '../../accets/img/cart.svg';
 import { useSelector } from 'react-redux';
+import { RootState } from '../Redux/store';
 
-function Header() {
-  const { totalPrice, items } = useSelector((state) => state.cart);
+const Header: React.FC = () => {
+  const { totalPrice, items } = useSelector((state: RootState) => state.cart);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -27,6 +28,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

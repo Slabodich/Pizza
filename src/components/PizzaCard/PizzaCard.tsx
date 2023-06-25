@@ -2,17 +2,35 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames/bind';
 
-import { addItem } from '../Redux/slices/cartSlice';
+import { CartItem, addItem } from '../Redux/slices/cartSlice';
 import styles from './PizzaCard.module.scss';
 import AddIcon from '../../accets/img/addIcon.svg';
+import { RootState } from '../Redux/store';
 
 const cx = cn.bind(styles);
 
-function PizzaCard({ id, imageUrl, title, types, sizes, price }) {
+type PizzaBlockProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  types: number[];
+  sizes: number[];
+  rating: number;
+};
+
+const PizzaCard: React.FC<PizzaBlockProps> = ({
+  id,
+  imageUrl,
+  title,
+  types,
+  sizes,
+  price,
+}) => {
   const [activeType, setActiveType] = useState(0);
   const [activeSize, setActiveSize] = useState(0);
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) =>
+  const cartItem = useSelector((state: RootState) =>
     state.cart.items.find((obj) => obj.id === id),
   );
 
@@ -20,13 +38,14 @@ function PizzaCard({ id, imageUrl, title, types, sizes, price }) {
   const typePizza = ['тонкое', 'традиционное'];
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title,
       price,
       imageUrl,
-      sizes: sizes[activeSize],
+      size: sizes[activeSize],
       type: typePizza[activeType],
+      count: 0,
     };
     dispatch(addItem(item));
   };
@@ -69,6 +88,6 @@ function PizzaCard({ id, imageUrl, title, types, sizes, price }) {
       </div>
     </div>
   );
-}
+};
 
 export default PizzaCard;

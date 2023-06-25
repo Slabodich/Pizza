@@ -1,36 +1,43 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './Sort.module.scss';
 import cnBind from 'classnames/bind';
+import { SortItem, SortPropertyEnum } from '../Redux/slices/filterSlice';
 
-function Sort({ activeSort, setActiveSotr }) {
+type SortProps = {
+  activeSort: SortItem;
+  setActiveSort: (i: SortItem) => void;
+};
+
+const Sort: React.FC<SortProps> = ({ activeSort, setActiveSort }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const sortRef = useRef();
-
+  const sortRef = useRef<HTMLDivElement>(null);
   const cx = cnBind.bind(styles);
 
-  const items = [
-    { name: 'популярности', sortProperty: 'rating' },
-    { name: 'цене (по убыванию)', sortProperty: 'price' },
-    { name: 'цене (по возрастанию)', sortProperty: '-price' },
-    { name: 'алфавиту', sortProperty: '-title' },
+  const items: SortItem[] = [
+    { name: 'популярности', sortProperty: SortPropertyEnum.RATING },
+    { name: 'цене (по убыванию)', sortProperty: SortPropertyEnum.PRICE_DESC },
+    { name: 'цене (по возрастанию)', sortProperty: SortPropertyEnum.PRICE_ASC },
+    { name: 'алфавиту', sortProperty: SortPropertyEnum.TITLE_ASC },
   ];
-  const selectItem = (item) => {
-    setActiveSotr(item);
-    setIsOpen(!isOpen);
+
+  const selectItem = (item: SortItem) => {
+    setActiveSort(item);
+    setIsOpen(false);
   };
+
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.composedPath().includes(sortRef.current)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sortRef.current && !sortRef.current.contains(e.target as Node)) {
         setIsOpen(false);
       }
     };
+
     document.body.addEventListener('click', handleClickOutside);
 
     return () => {
       document.body.removeEventListener('click', handleClickOutside);
     };
-  });
+  }, []);
 
   return (
     <div ref={sortRef} className={styles.sort}>
@@ -48,7 +55,7 @@ function Sort({ activeSort, setActiveSotr }) {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>{activeSort}</span>
+        <span onClick={() => setIsOpen(!isOpen)}>{activeSort.name}</span>
       </div>
       {isOpen && (
         <div className={styles.popup}>
@@ -69,6 +76,6 @@ function Sort({ activeSort, setActiveSotr }) {
       )}
     </div>
   );
-}
+};
 
 export default Sort;
