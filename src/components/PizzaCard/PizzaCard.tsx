@@ -34,7 +34,6 @@ const PizzaCard: React.FC<PizzaBlockProps> = ({
     state.cart.items.find((obj) => obj.id === id),
   );
 
-  const addedCount = cartItem ? cartItem.count : 0;
   const typePizza = ['тонкое', 'традиционное'];
 
   const onClickAdd = () => {
@@ -83,7 +82,6 @@ const PizzaCard: React.FC<PizzaBlockProps> = ({
         <button onClick={onClickAdd} type="button" className={styles.buttonAdd}>
           <img src={AddIcon} alt="add" />
           <span>Добавить</span>
-          {addedCount > 0 && <i>{addedCount}</i>}
         </button>
       </div>
     </div>
