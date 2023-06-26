@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Pizza/static/css/main.4b3824b3.css",
-    "main.js": "/Pizza/static/js/main.fd6b1a79.js",
+    "main.css": "/Pizza/static/css/main.a8a3129a.css",
+    "main.js": "/Pizza/static/js/main.3e25a3fc.js",
     "static/media/emptyCart.svg": "/Pizza/static/media/emptyCart.903eff3144cd70abf2614eec897d6974.svg",
     "static/media/cart.svg": "/Pizza/static/media/cart.d05720f2b474db2145233cd2ce1d4e91.svg",
     "static/media/clear.svg": "/Pizza/static/media/clear.ceafcffb34cece0b1462c3505b170d88.svg",
@@ -11,11 +11,11 @@
     "static/media/minus.svg": "/Pizza/static/media/minus.6c093cd41848df4aa3475a7610eb6605.svg",
     "static/media/addIcon.svg": "/Pizza/static/media/addIcon.fd8c3c804f350e4704863a19a15fb36c.svg",
     "static/media/back.svg": "/Pizza/static/media/back.fc29ec73901b6f8218c91a0d69592416.svg",
-    "main.4b3824b3.css.map": "/Pizza/static/css/main.4b3824b3.css.map",
-    "main.fd6b1a79.js.map": "/Pizza/static/js/main.fd6b1a79.js.map"
+    "main.a8a3129a.css.map": "/Pizza/static/css/main.a8a3129a.css.map",
+    "main.3e25a3fc.js.map": "/Pizza/static/js/main.3e25a3fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b3824b3.css",
-    "static/js/main.fd6b1a79.js"
+    "static/css/main.a8a3129a.css",
+    "static/js/main.3e25a3fc.js"
   ]
 }
