@@ -69,8 +69,14 @@
     border-radius: 30px;
     border: none;
 
+    &:active {
+      background-color: darken($orange, 12%);
+      transform: translateY(1px);
+    }
+
     @media screen and (min-width: 1280px) {
       &:hover {
+        cursor: pointer;
         background-color: darken($orange, 8%);
         transition: all $duration ease-in-out;
       }

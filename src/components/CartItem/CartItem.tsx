@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 import {
-  addItem,
+  plusCount,
   minusCount,
   removeItem,
   CartItem as CartItemType,
@@ -13,7 +13,7 @@ import { ReactComponent as MinusIcon } from '../../accets/img/minus.svg';
 import { ReactComponent as RemoveIcon } from '../../accets/img/remove.svg';
 
 interface CartItemProps {
-  id: string;
+  unic: string;
   title: string;
   imageUrl: string;
   price: number;
@@ -23,7 +23,7 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({
-  id,
+  unic,
   title,
   imageUrl,
   price,
@@ -34,20 +34,20 @@ const CartItem: React.FC<CartItemProps> = ({
   const dispatch = useDispatch();
 
   const onClickPlus = useCallback(() => {
-    dispatch(addItem({ id } as CartItemType));
-  }, [dispatch, id]);
+    dispatch(plusCount({ unic } as CartItemType));
+  }, [dispatch, unic]);
 
   const onClickMinus = useCallback(() => {
     if (count < 2) {
-      dispatch(removeItem(id));
+      dispatch(removeItem(unic));
     } else {
-      dispatch(minusCount({ id } as CartItemType));
+      dispatch(minusCount({ unic } as CartItemType));
     }
-  }, [count, dispatch, id]);
+  }, [count, dispatch, unic]);
 
   const onClickRemoveItem = useCallback(() => {
-    dispatch(removeItem(id));
-  }, [dispatch, id]);
+    dispatch(removeItem(unic));
+  }, [dispatch, unic]);
 
   return (
     <div className={styles.item}>

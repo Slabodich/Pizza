@@ -104,6 +104,10 @@
       border: none;
       outline: none;
       background-color: transparent;
+      &:active {
+        background-color: darken($orange, 12%);
+        transform: translateY(1px);
+      }
       svg {
         width: 20px;
         height: 20px;

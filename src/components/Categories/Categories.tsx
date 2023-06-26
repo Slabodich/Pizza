@@ -7,36 +7,38 @@ type CategoriesProps = {
   setActiveCategorie: (i: number) => void;
 };
 
+const categories = [
+  {
+    _id: 0,
+    name: 'Все',
+  },
+  {
+    _id: 1,
+    name: 'Мясные',
+  },
+  {
+    _id: 2,
+    name: 'Вегетарианская',
+  },
+  {
+    _id: 3,
+    name: 'Гриль',
+  },
+  {
+    _id: 4,
+    name: 'Острые',
+  },
+  {
+    _id: 5,
+    name: 'Закрытые',
+  },
+];
+
 const Categories: React.FC<CategoriesProps> = ({
   activeCategorie,
   setActiveCategorie,
 }) => {
-  const categories = [
-    {
-      _id: 0,
-      name: 'Все',
-    },
-    {
-      _id: 1,
-      name: 'Мясные',
-    },
-    {
-      _id: 2,
-      name: 'Вегетарианская',
-    },
-    {
-      _id: 3,
-      name: 'Гриль',
-    },
-    {
-      _id: 4,
-      name: 'Острые',
-    },
-    {
-      _id: 5,
-      name: 'Закрытые',
-    },
-  ];
+
   const cx = cnBind.bind(styles);
 
   return (

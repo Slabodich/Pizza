@@ -136,6 +136,11 @@
         background-color: $orange;
         border-radius: 30px;
 
+        &:active {
+          background-color: darken($orange, 12%);
+          transform: translateY(1px);
+        }
+
         @media screen and (min-width: 1280px) {
           &:hover {
             background-color: darken($orange, 8%);

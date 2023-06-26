@@ -22,18 +22,18 @@ const Home: React.FC = () => {
   );
   const { items, status } = useSelector((state: RootState) => state.pizzas);
 
-  const fetchData = () => {
-    const sortBy = sort.sortProperty.replace('-', '');
-    const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
-    const category = activeCategorie > 0 ? String(activeCategorie) : '';
-
-    dispatch(fetchPizzas({ category, sortBy, order }));
-    window.scrollTo(0, 0);
-  };
-
   useEffect(() => {
+    const fetchData = () => {
+      const sortBy = sort.sortProperty.replace('-', '');
+      const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
+      const category = activeCategorie > 0 ? String(activeCategorie) : '';
+
+      dispatch(fetchPizzas({ category, sortBy, order }));
+      window.scrollTo(0, 0);
+    };
+
     fetchData();
-  }, [activeCategorie, sort]);
+  }, [activeCategorie, sort, dispatch]);
 
   const handleSetActiveCategorie = (i: number) => {
     dispatch(setActiveCategorie(i));
