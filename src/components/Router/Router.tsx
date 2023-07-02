@@ -3,8 +3,8 @@ import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import styles from './Router.module.scss';
 
 import Header from '../Header/Header';
-import Home from '../Pages/Home/Home';
-import Cart from '../Pages/Cart/Cart';
+import Home from '../../Pages/Home/Home';
+import Cart from '../../Pages/Cart/Cart';
 
 function Router() {
   return (

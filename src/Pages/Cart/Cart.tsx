@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Cart.module.scss';
 import { clearItems } from '../../Redux/slices/cartSlice';
-import { ReactComponent as CartIcon } from '../../../accets/img/cart.svg';
-import { ReactComponent as ClearIcon } from '../../../accets/img/clear.svg';
-import { ReactComponent as BackIcon } from '../../../accets/img/back.svg';
+import { ReactComponent as CartIcon } from '../../accets/img/cart.svg';
+import { ReactComponent as ClearIcon } from '../../accets/img/clear.svg';
+import { ReactComponent as BackIcon } from '../../accets/img/back.svg';
 import { Link } from 'react-router-dom';
-import CartItem from '../../CartItem/CartItem';
-import CartEmpty from '../../CartEmpty/CartEmpty';
+import CartItem from '../../components/CartItem/CartItem';
+import CartEmpty from '../../components/CartEmpty/CartEmpty';
 import { RootState } from '../../Redux/store';
 
 const Cart: React.FC = () => {

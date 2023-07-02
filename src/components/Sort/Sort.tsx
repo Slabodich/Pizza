@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Sort.module.scss';
 import cnBind from 'classnames/bind';
-import { SortItem, SortPropertyEnum } from '../Redux/slices/filterSlice';
+import { SortItem, SortPropertyEnum } from '../../Redux/slices/filterSlice';
 
 type SortProps = {
   activeSort: SortItem;

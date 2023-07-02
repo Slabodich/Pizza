@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import Categories from '../../Categories/Categories';
-import Sort from '../../Sort/Sort';
-import PizzaCard from '../../PizzaCard/PizzaCard';
+import Categories from '../../components/Categories/Categories';
+import Sort from '../../components/Sort/Sort';
+import PizzaCard from '../../components/PizzaCard/PizzaCard';
 import styles from './Home.module.scss';
-import Sceleton from '../../PizzaCard/Sceleton';
+import Sceleton from '../../components/PizzaCard/Sceleton';
 import {
   SortItem,
   setActiveCategorie,

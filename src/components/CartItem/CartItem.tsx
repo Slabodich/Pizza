@@ -6,7 +6,7 @@ import {
   minusCount,
   removeItem,
   CartItem as CartItemType,
-} from '../Redux/slices/cartSlice';
+} from '../../Redux/slices/cartSlice';
 import styles from './CartItem.module.scss';
 import { ReactComponent as PlusIcon } from '../../accets/img/plus.svg';
 import { ReactComponent as MinusIcon } from '../../accets/img/minus.svg';

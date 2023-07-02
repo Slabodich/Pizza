@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import cn from 'classnames/bind';
 
-import { CartItem, addItem } from '../Redux/slices/cartSlice';
+import { CartItem, addItem } from '../../Redux/slices/cartSlice';
 import styles from './PizzaCard.module.scss';
 import AddIcon from '../../accets/img/addIcon.svg';
 
